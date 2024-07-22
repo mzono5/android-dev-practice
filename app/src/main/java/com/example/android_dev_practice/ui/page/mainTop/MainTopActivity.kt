@@ -1,4 +1,4 @@
-package com.example.android_dev_practice
+package com.example.android_dev_practice.ui.page.mainTop
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
