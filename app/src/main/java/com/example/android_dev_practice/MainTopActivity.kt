@@ -16,7 +16,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Modifier
 import com.example.android_dev_practice.ui.theme.AndroiddevpracticeTheme
 
-class MainActivity : ComponentActivity() {
+class MainTopActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
