@@ -1,20 +1,28 @@
 package com.example.android_dev_practice.ui.page.mainTop
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainTopPage() {
+    var count by remember { mutableIntStateOf(0) }
+
     Scaffold(
         modifier = Modifier
             .fillMaxSize(),
@@ -29,14 +37,28 @@ fun MainTopPage() {
         }
     ) { innerPadding ->
         Column(
-            Modifier.padding(innerPadding)
+            Modifier.padding(innerPadding),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            TextButton(onClick = { /*TODO*/ }) {
-                Text("Intentを使用した画面遷移")
+            Text(text = count.toString())
+            Row {
+                OutlinedButton(onClick = {
+                    count++
+                }) {
+                    Text(text = "+ 1")
+                }
+                OutlinedButton(onClick = {
+                    count--
+                }) {
+                    Text(text = "- 1")
+                }
             }
-            TextButton(onClick = { /*TODO*/ }) {
-                Text("Navigation Componentを使用した画面遷移")
-            }
+//            TextButton(onClick = { /*TODO*/ }) {
+//                Text("Intentを使用した画面遷移")
+//            }
+//            TextButton(onClick = { /*TODO*/ }) {
+//                Text("Navigation Componentを使用した画面遷移")
+//            }
         }
     }
 }
