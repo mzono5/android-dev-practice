@@ -3,6 +3,7 @@ package com.example.android_dev_practice.repository
 import com.example.android_dev_practice.model.Task
 
 interface TaskRepository {
+    fun getTasks(): List<Task>
     fun add(task: Task)
     fun delete(task: Task)
     fun update(task: Task)
@@ -10,6 +11,8 @@ interface TaskRepository {
 
 class TaskRepositoryImpl : TaskRepository {
     private var tasks = mutableListOf<Task>()
+
+    override fun getTasks() = tasks
 
     override fun add(task: Task) {
         tasks.add(task)
