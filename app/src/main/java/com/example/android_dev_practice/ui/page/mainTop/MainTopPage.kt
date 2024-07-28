@@ -15,11 +15,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainTopPage(
-    viewModel: MainTopViewModel
+    viewModel: MainTopViewModel = koinViewModel()
 ) {
     val count by viewModel.countState.collectAsState()
 
