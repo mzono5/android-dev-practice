@@ -11,17 +11,17 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainTopPage() {
-    var count by remember { mutableIntStateOf(0) }
+fun MainTopPage(
+    viewModel: MainTopViewModel
+) {
+    val count by viewModel.countState.collectAsState()
 
     Scaffold(
         modifier = Modifier
@@ -43,12 +43,12 @@ fun MainTopPage() {
             Text(text = count.toString())
             Row {
                 OutlinedButton(onClick = {
-                    count++
+                    viewModel.plusCount()
                 }) {
                     Text(text = "+ 1")
                 }
                 OutlinedButton(onClick = {
-                    count--
+                    viewModel.minusCount()
                 }) {
                     Text(text = "- 1")
                 }
