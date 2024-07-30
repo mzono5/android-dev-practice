@@ -1,7 +1,7 @@
 {
   "automerge": false,
   "branchPrefix": "feature/renovate/",
-  "baseBranches": ["/^release\\/.*/"],
+  "baseBranches": ["feature/renovate"],
   "configMigration": true,
   "draftPR": true,
   "extends": [
