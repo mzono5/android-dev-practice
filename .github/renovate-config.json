@@ -1,5 +1,9 @@
 {
+  "automerge": false,
+  "branchPrefix": "feature/renovate/",
+  "baseBranches": ["/^release\\/.*/"],
   "configMigration": true,
+  "draftPR": true,
   "extends": [
     "config:recommended",
     "docker:pinDigests",
@@ -7,12 +11,9 @@
     ":pinDevDependencies",
     ":disableDependencyDashboard"
   ],
-  "automerge": false,
-  "branchPrefix": "feature/renovate/",
-  "baseBranches": ["/^release\\/.*/"],
-  "draftPR": true,
   "ignorePaths": ["Gemfile"],
   "labels": [
       "renovate"
   ]
+  "onboarding": false,
 }
