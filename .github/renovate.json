@@ -1,11 +1,18 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        "config:best-practices"
-    ],
-    "branchPrefix": "renovate/",
-    "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
-    "labels": [
-        "renovate"
-    ]
+  "configMigration": true,
+  "extends": [
+    "config:recommended",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests",
+    ":pinDevDependencies",
+    ":disableDependencyDashboard"
+  ],
+  "automerge": false,
+  "branchPrefix": "feature/renovate/",
+  "baseBranches": ["/^release\\/.*/"],
+  "draftPR": true,
+  "ignorePaths": ["Gemfile"],
+  "labels": [
+      "renovate"
+  ]
 }
